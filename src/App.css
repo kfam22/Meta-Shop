@@ -3,8 +3,18 @@
 } */
 
 /* LANDING */
+.logo{
+  position: fixed;
+  padding: 1rem 3rem;
+  color:rgba(87, 196, 77, 1);
+}
 .landing{
+  margin-right: 6rem;
   height: 100vh;
+  background-image: url(../src/assets/nike1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   /* overflow: hidden; */
   object-position: 50% 50%;
 
@@ -13,13 +23,12 @@
 
 }
 
-.landing img{
+/* .landing img{
   object-fit:cover;
   object-position: 50% 50%;
-
   max-width:100%;
-max-height:100vh;
-}
+  height:100vh;
+} */
 
 /* NAV */
 .verticalNav{
@@ -31,6 +40,8 @@ max-height:100vh;
   margin-left: 95%;
   position: fixed;
   justify-content: space-between;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .nav p{
@@ -49,4 +60,153 @@ max-height:100vh;
 .cart img{
   width: 50px;
   height: 50px;
+  border-radius: 25px;
+}
+
+/* GRID */
+.gridSection{
+  height: 100vh;
+}
+
+.boxContainer{
+  margin: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.boxContainer div{
+  width: 300px;
+  height: 300px;
+  background-color: grey;
+  margin: 1rem;
+}
+
+/* CAROUSEL STYLING */
+.wrapper{
+  margin: 4.5rem 6rem 2rem 3rem;
+  height: 700px;
+/*   border: 1px solid blue; */
+  display: flex;
+  overflow-x: auto;
+}
+
+.wrapper::-webkit-scrollbar{
+  width: 0;
+}
+
+.item img{
+  object-fit: cover;
+  height: 700px;
+  /* min-width: 30rem; */
+  margin-right: 1rem; 
+}
+
+.imageInfo div {
+  margin: 70% 2rem 2rem 2rem;
+  width: 500px;
+}
+
+.item {
+  margin-right: 1200px; 
+
+}
+
+.wrapper .item{
+  /* width: 600px; */
+  height: 700px;
+  /* line-height: 110px; */
+  /* text-align: center; */
+  /* background-color: lightgrey; */
+  margin-right: 12px; 
+  object-fit: cover;
+}
+
+/* MARQUEE */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.marquee__wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 6rem 1rem 0;
+  padding: .6rem;
+  color:white;
+  background-color: black;
+  
+  /* //Following styles not required */
+  /* font-family: Arial; */
+  font-size: 1rem;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+}
+
+.marquee {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.marquee__inner-wrapper {
+  /* //Animation duration needs to be twice as fast as the one below */
+  animation: marquee 2.5s linear infinite reverse;
+  animation-play-state: paused;
+
+  .scrolling-up & {
+    animation-play-state: running;
+  }
+}
+
+.marquee__inner {
+  animation: marquee 5s linear infinite;
+  
+  /* //Spacing between marquee elements */
+  padding-right: 40px;
+}
+
+/* SPLIT SCREEN */
+.split{
+  padding: 9rem;
+  margin: 0 auto;
+}
+
+.splitContainer{
+  display: flex;
+  /* justify-content: space-between; */
+  /* width: 60%; */
+}
+
+.splitLeft{
+  background-image: url(./assets/waves.jpg);
+}
+
+.splitRight{
+  background-image: url(./assets/flowers.jpg);
+  background-position: center;
+}
+
+.splitLeft, .splitRight{
+  padding: 3rem;
+  margin-right: 5rem;
+}
+
+.splitLeft img,.splitRight img{
+  object-fit: cover;
+  width: 30rem;
+  /* height: 30rem; */
+}
+
+.splitContentContainer h1{
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
 }

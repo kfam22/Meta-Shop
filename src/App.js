@@ -6,6 +6,7 @@ import Nav from './components/nav';
 function App() {
   return (
     <div>
+      <h1 className='logo'>Almost On Time</h1>
       <Nav/>
       <Landing/>
     </div>
