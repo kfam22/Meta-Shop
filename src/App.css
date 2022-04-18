@@ -100,6 +100,7 @@
   height: 700px;
   /* min-width: 30rem; */
   margin-right: 1rem; 
+  /* border: solid 1px black; */
 }
 
 .imageInfo div {
@@ -109,7 +110,6 @@
 
 .item {
   margin-right: 1200px; 
-
 }
 
 .wrapper .item{
@@ -119,7 +119,7 @@
   /* text-align: center; */
   /* background-color: lightgrey; */
   margin-right: 12px; 
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 /* MARQUEE */
@@ -174,7 +174,7 @@
 
 /* SPLIT SCREEN */
 .split{
-  padding: 9rem;
+  padding: 4rem 9rem 9rem 9rem;
   margin: 0 auto;
 }
 
@@ -210,3 +210,113 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+/* NEWS LETTER */
+.newsletterSection{
+  height: 300px;
+  margin-right: 6rem;
+  background-color: black;
+  color: white;
+}
+
+/* INSTAGRAM FEED */
+.instagramSection{
+  height: 14rem;
+  margin-right: 6rem;
+  /* background-color: aqua; */
+}
+
+.instagramSection p{
+  
+  margin: 0 0 .3rem 1rem;
+}
+
+.instagramContainer{
+  display: flex;
+}
+
+.instagramContainer div{
+  min-height: 12rem;
+  min-width: 12rem;
+  margin-right: 1.5px;
+  background-color: rgb(243, 243, 243);
+}
+
+/* FOOTER */
+.footer{
+  display: flex;
+  justify-content: center;
+  margin: 0 6rem 0 0;
+  background-color: black;
+  color: white;
+}
+
+.footer p{
+  margin: .2rem 2rem .5rem 0;
+  text-transform: uppercase;
+  font-size: .6rem;
+}
+
+/* PRODUCT VIEW */
+.productView{
+  display:flex;
+}
+
+.productLeft{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.productLeft img{
+  object-fit: cover;
+}
+
+.productRight img{
+  height: 45rem;
+}
+
+.productInfo{
+  margin: 0 5rem;
+}
+
+.productInfo h1, .productInfo p{
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.description{
+  margin-bottom: 1rem;
+}
+
+.select{
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sizes{
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.sizes div{
+  height: 2rem;
+  width:2rem;
+  border-radius: 50%;
+}
+
+.sizes div:hover{
+  border: solid 1px black;
+}
+
+.sizes p{
+  margin-right: 2rem;
+  padding: .4rem;
+  text-align: center;
+}
+
+
+
+.add{
+  font-weight: bold;
+}
+

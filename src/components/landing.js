@@ -1,18 +1,22 @@
 import Grid from './grid';
 import Carousel from './carousel';
 import Marquee from './marquee';
+import Newsletter from './newsletter';
 import SplitScreen from './splitScreen';
-import landingImage from '../assets/nike1.png';
+import InstagramFeedBar from './instagramFeedBar';
+
 
 export default function landing() {
   return (
     <div>
       <div className='landing'>
-          {/* <img src={landingImage}/> */}
+          {/* this div contains a background image */}
       </div>
       <Marquee/>
       <Carousel/>
+      <Newsletter/>
       <SplitScreen/>
+      <InstagramFeedBar/>
     </div>
   )
 }
