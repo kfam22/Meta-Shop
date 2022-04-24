@@ -1,4 +1,5 @@
 import cart from '../assets/cart.png';
+import { Link } from 'react-router-dom';
 
 export default function nav() {
   return (
@@ -8,9 +9,9 @@ export default function nav() {
         </div>
 
         <div className='nav'>
-        <p>shop</p>
-        <p>about</p>
-        <p>press</p>
+        <Link to='/view-product'>shop</Link>
+        <Link to='/'>about</Link>
+        <Link to='/'>press</Link>
         </div>
     </div>
   )
