@@ -4,21 +4,19 @@ export default function splitScreen() {
   return (
     <div className="split">
         
-        <div className='splitContainer'>
             <div className='splitContentContainer'>
-                <div className="splitLeft">
-                    <img src={leftImage}/>
+                <img src={leftImage}/>
+                <div className='shop-link'>
+                <a href='/'>shop vintage</a>
                 </div>
-                <h1>shop vintage</h1>
             </div>
 
-            <div className='splitContentContainer'>
-                <div className="splitRight">
-                    <img src={rightImage}/>
+            <div className='splitContentContainer right-img'>
+                <img src={rightImage}/>
+                <div className='shop-link'>
+                <a href='/'>shop reworks</a>
                 </div>
-                <h1>shop reworks</h1>
             </div>
-        </div>
 
     </div>
   )

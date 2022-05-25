@@ -1,6 +1,11 @@
-/* *{
-  border: 1px solid red;
-} */
+*{
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
 
 /* LANDING */
 .logo{
@@ -12,7 +17,7 @@
   font-weight: bold;
 }
 .landing{
-  margin-right: 6rem;
+  margin-right: 4.5rem;
   height: 100vh;
   background-image: url(../src/assets/nike1.png);
   background-position: center;
@@ -40,7 +45,8 @@
   /* transform: rotate(90deg); */
   height: 90vh;
   margin: 2rem;
-  margin-left: 95%;
+  margin-left: 96%;
+  margin-right: 1rem;
   position: fixed;
   justify-content: space-between;
   background-color: white;
@@ -61,8 +67,9 @@
 }
 
 .nav a:hover{
-  border: solid 1px rgba(87, 196, 77, 1);
-  border-radius: 25px;
+  color: rgb(78, 0, 203);
+  /* border: solid 1px rgba(87, 196, 77, 1);
+  border-radius: 25px; */
 }
 
 .nav{
@@ -95,8 +102,14 @@
 }
 
 /* CAROUSEL STYLING */
+.arrow {
+  position: absolute;
+  top: 85rem; right: 5rem;
+}
+
 .wrapper{
-  margin: 4.5rem 6rem 2rem 3rem;
+  margin-right: 4.5rem;
+  margin-bottom: -16px;
   height: 700px;
   display: flex;
   overflow-x: auto;
@@ -110,9 +123,8 @@
 .item img{
   object-fit: cover;
   height: 700px;
-  /* min-width: 30rem; */
-  margin-right: 1rem; 
-  /* border: solid 1px black; */
+  /* margin-right: 1rem;  */
+  border: solid 1px black;
 }
 
 .imageInfo div {
@@ -120,9 +132,9 @@
   width: 500px;
 }
 
-.item {
+/* .item {
   margin-right: 1200px; 
-}
+} */
 
 .wrapper .item{
   /* width: 600px; */
@@ -130,7 +142,7 @@
   /* line-height: 110px; */
   /* text-align: center; */
   /* background-color: lightgrey; */
-  margin-right: 12px; 
+  /* margin-right: 12px;  */
   /* object-fit: cover; */
 }
 
@@ -149,7 +161,7 @@
 .marquee__wrapper {
   white-space: nowrap;
   overflow: hidden;
-  margin: 0 6rem 1rem 0;
+  margin-right: 4.5rem;
   padding: .6rem;
   color:white;
   background-color: black;
@@ -186,8 +198,12 @@
 
 /* SPLIT SCREEN */
 .split{
-  padding: 4rem 9rem 9rem 9rem;
-  margin: 0 auto;
+  display: flex;
+  /* flex-direction: column; */
+  /* padding: 4rem 0rem; */
+  max-width: 100vw;
+  margin-right: 4.5rem;
+  margin-bottom: 5rem;
 }
 
 .splitContainer{
@@ -206,35 +222,86 @@
 }
 
 .splitLeft, .splitRight{
+  height: 70%;
   padding: 3rem;
-  margin-right: 5rem;
 }
 
 .splitLeft img,.splitRight img{
   object-fit: cover;
-  width: 30rem;
-  /* height: 30rem; */
+  height: 100%;
+  width: 100%;
 }
 
-.splitContentContainer h1{
+.splitContentContainer {
+  height: 90vh;
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  /* margin-left: 4rem; */
+  /* height: fit-content; */
+}
+
+.splitContentContainer div {
+  width: 100%;
+  /* border: 2px solid black; */
+}
+
+.splitContentContainer img {
+  border-bottom: 2px solid black;
+  object-fit: cover;
+  height:95%;
+  width: 100%;
+}
+
+.right-img {
+  border-left: none;
+}
+
+
+.shop-link a {
+  display: flex;
+  justify-content: center;
   font-size: 1.2rem;
   font-weight: normal;
   text-transform: uppercase;
-  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-top: .6rem;
 }
 
 /* NEWS LETTER */
 .newsletterSection{
+  padding: 5rem;
   height: 300px;
-  margin-right: 6rem;
+  margin-right: 4.5rem;
   background-color: black;
   color: white;
+}
+
+.newsletterSection form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletterSection input {
+  border-bottom: none;
+}
+
+.newsletterSection input, .newsletterSection button {
+  width: 25rem;
+  padding: .7rem;
+  border: none;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
 /* INSTAGRAM FEED */
 .instagramSection{
   height: 14.6rem;
-  margin-right: 6rem;
+  margin-right: 4.5rem;
   overflow: hidden;
   /* background-color: aqua; */
 }
@@ -259,7 +326,6 @@
 .footer{
   display: flex;
   justify-content: center;
-  /* margin: 0 6rem 0 0; */
   padding: .4rem;
   background-color: black;
   color: white;
@@ -274,10 +340,11 @@
 /* PRODUCT VIEW */
 .productView{
   display:flex;
+  height: 100vh;
 }
 
 .productLeft{
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
 }
 
@@ -285,13 +352,21 @@
   object-fit: cover;
 }
 
-.productRight img{
-  height: 45rem;
+.product-info-img img{
+  object-fit: cover;
+  height: 40rem;
 }
 
-.productInfo{
-  margin: 0 5rem;
+.productRight{
+  display:flex;
+  flex-direction: column;
+  padding: 0 5rem;
+  border-left: 2px solid black;
 }
+
+/* .productInfo{
+  margin: 0 5rem;
+} */
 
 .productInfo h1, .productInfo p{
   text-transform: uppercase;
@@ -316,6 +391,8 @@
   height: 2rem;
   width:2rem;
   border-radius: 50%;
+  margin: .3rem .3rem .3rem 0;
+  border: solid 1px transparent;
 }
 
 .sizes div:hover{
@@ -332,5 +409,18 @@
 
 .add{
   font-weight: bold;
+}
+
+/* ABOUT STYLES */
+
+.about-container{
+  height: 100vh;
+  /* background-image: url(./assets/patternpaper.png); */
+}
+
+/* PRESS STYLES */
+
+.press-container{
+  height: 100vh;
 }
 

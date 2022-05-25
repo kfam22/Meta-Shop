@@ -3,10 +3,12 @@ import productsModeled from '../assets/productsModeled';
 export default function carousel() {
   return (
     <div className="wrapper">
+      {/* <span class="material-symbols-outlined arrow">
+      arrow_forward_ios
+      </span> */}
+
         {productsModeled.map(image => {
-            //   console.log("current image", image)
             if(typeof image === 'object'){
-                // console.log("we're inside the if statement", image, "image.title", image.collection1.title)
                 return(
                 <div className='item imageInfo'>
                     <div>

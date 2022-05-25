@@ -10,8 +10,8 @@ export default function nav() {
 
         <div className='nav'>
         <Link to='/view-product'>shop</Link>
-        <Link to='/'>about</Link>
-        <Link to='/'>press</Link>
+        <Link to='/about'>about</Link>
+        <Link to='/press'>press</Link>
         </div>
     </div>
   )

@@ -11,7 +11,10 @@ export default function productView() {
         </div>
 
         <div className="productRight">
+            <div className='product-info-img'>
             <img src={product1}/>
+            </div>
+
             <div className='productInfo'>
                 <div className='description'>
                 <h1>product 1</h1>
