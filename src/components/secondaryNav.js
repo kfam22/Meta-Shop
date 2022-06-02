@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import cart from '../assets/cart.png';
 
 
-export default function secondaryNav({onNavClick}) {
+export default function SecondaryNav({onNavClick}) {
   return (
 
     <div>

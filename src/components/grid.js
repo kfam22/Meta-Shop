@@ -1,5 +1,5 @@
 
-export default function grid() {
+export default function Grid() {
   return (
     <div className="gridSection">
         <div className='boxContainer'>

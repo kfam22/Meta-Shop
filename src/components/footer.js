@@ -1,5 +1,5 @@
 
-export default function footer() {
+export default function Footer() {
   return (
     <div className="footer">
         <p>contact</p>

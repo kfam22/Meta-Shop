@@ -1,5 +1,5 @@
 
-export default function newsletter() {
+export default function Newsletter() {
   return (
     <div className="newsletterSection">
         <h2>fashionably late, but on time for the next aot drop</h2>

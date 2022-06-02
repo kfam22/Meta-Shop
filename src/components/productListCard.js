@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function productListCard(props) {
+export default function ProductListCard(props) {
     const { source, name, price, idx } = props;
   return (
     <Link to={`/shop/${idx}`} className='productCard'>

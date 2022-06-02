@@ -1,6 +1,6 @@
 import leftImage from '../assets/ecomm dummy products/product8.4.webp';
 import rightImage from '../assets/ecomm dummy products/product3.4.webp';
-export default function splitScreen() {
+export default function splitScreenRight() {
   return (
     <div className="split">
         

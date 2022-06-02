@@ -1,5 +1,5 @@
 
-export default function instagramFeedBar() {
+export default function InstagramFeedBar() {
   return (
     <div className="instagramSection">
         <p>@almost.on.time</p>

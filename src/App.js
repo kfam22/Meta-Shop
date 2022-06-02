@@ -1,14 +1,14 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
-import Landing from './components/landing';
-import Nav from './components/nav';
-import SecondaryNav from './components/secondaryNav';
-import Footer from './components/footer';
-import ProductList from './components/productList';
-import ProductView from './components/productView';
-import About from './components/about';
-import Press from './components/press';
+import Landing from './pages/Landing';
+import Nav from './components/Nav';
+import SecondaryNav from './components/SecondaryNav';
+import Footer from './components/Footer';
+import ProductList from './pages/ProductList';
+import ProductView from './pages/ProductView';
+import About from './pages/About';
+import Press from './pages/Press';
 
 function App() {
 

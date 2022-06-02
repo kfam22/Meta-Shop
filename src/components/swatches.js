@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function swatches() {
+export default function Swatches() {
   return (
     <div className='swatches'>
         <p className='tab'>library</p>

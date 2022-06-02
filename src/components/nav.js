@@ -1,9 +1,9 @@
 import cart from '../assets/cart.png';
 import { Link } from 'react-router-dom';
 
-export default function nav({onNavClick}) {
+export default function Nav({onNavClick}) {
   return (
-    <div className='verticalNav'>
+    <nav className='verticalNav'>
         <div className='cart'>
             <img src={cart}/>
         </div>
@@ -13,6 +13,6 @@ export default function nav({onNavClick}) {
         <Link to='/about'>about</Link>
         <Link to='/press'>press</Link>
         </div>
-    </div>
+    </nav>
   )
 }

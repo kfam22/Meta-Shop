@@ -1,5 +1,5 @@
 
-export default function marquee() {
+export default function Marquee() {
   return (
     <div class="marquee__wrapper">
         <div class="marquee">

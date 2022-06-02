@@ -1,6 +1,6 @@
 import productsModeled from '../assets/productsModeled';
 
-export default function carousel() {
+export default function Carousel() {
   return (
     <div className="wrapper">
       <span class="material-symbols-outlined arrow">

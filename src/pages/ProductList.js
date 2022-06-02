@@ -1,8 +1,8 @@
 import React from 'react';
 import { products } from '../dummy data/dummyProducts';
-import ProductListCard from './productListCard';
+import ProductListCard from '../components/ProductListCard';
 
-export default function productList() {
+export default function ProductList() {
     console.log('products', products)
   return (
     <div className='productList'>
