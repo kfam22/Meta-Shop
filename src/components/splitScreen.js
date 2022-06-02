@@ -6,15 +6,15 @@ export default function splitScreen() {
         
             <div className='splitContentContainer'>
                 <img src={leftImage}/>
-                <div className='shop-link'>
-                <a href='/'>shop vintage</a>
-                </div>
             </div>
 
             <div className='splitContentContainer right-img'>
-                <img src={rightImage}/>
+                <div className='splitText'>
+                <h1>vintage collection</h1>
+                <p>some things only get better with age. we preserve history.  transform that which is has been deemed useles, and create a new aesthetic from the unexpected.explore our vintage collection with unique finds from different eras.</p>
+                </div>
                 <div className='shop-link'>
-                <a href='/'>shop reworks</a>
+                <a href='/'>shop vintage</a>
                 </div>
             </div>
 

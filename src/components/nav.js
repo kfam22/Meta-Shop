@@ -1,7 +1,7 @@
 import cart from '../assets/cart.png';
 import { Link } from 'react-router-dom';
 
-export default function nav() {
+export default function nav({onNavClick}) {
   return (
     <div className='verticalNav'>
         <div className='cart'>
@@ -9,7 +9,7 @@ export default function nav() {
         </div>
 
         <div className='nav'>
-        <Link to='/view-product'>shop</Link>
+        <p onClick={onNavClick}>shop</p>
         <Link to='/about'>about</Link>
         <Link to='/press'>press</Link>
         </div>

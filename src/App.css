@@ -7,6 +7,10 @@ div {
   display: block;
 }
 
+body {
+  text-transform: uppercase;
+}
+
 /* LANDING */
 .logo{
   position: fixed;
@@ -17,7 +21,7 @@ div {
   font-weight: bold;
 }
 .landing{
-  margin-right: 4.5rem;
+  margin-right: 3.5rem;
   height: 100vh;
   background-image: url(../src/assets/nike1.png);
   background-position: center;
@@ -49,11 +53,12 @@ div {
   margin-right: 1rem;
   position: fixed;
   justify-content: space-between;
-  background-color: white;
-  border-radius: 25px;
+  /* background-color: white; */
+  /* border-radius: 25px; */
+  /* border: 2px solid black; */
 }
 
-.nav a{
+.nav a, .nav p{
   text-align:center;
   transform: rotate(90deg);
   padding: .2rem .4rem;
@@ -63,6 +68,7 @@ div {
   text-decoration: none;
   display: block;
   border: solid 1px transparent;
+  cursor: pointer;
   /* margin-bottom: 4rem; */
 }
 
@@ -80,6 +86,35 @@ div {
   width: 50px;
   height: 50px;
   border-radius: 25px;
+}
+
+/* SECONDARY NAV */
+/* .toggleNav {
+  display: none;
+} */
+
+.secondaryNav {
+  position: fixed;
+  margin-left: 83%;
+  height: 100vh;
+  background-color: white;
+  padding: 5rem;
+  padding-top: 26rem;
+  border-left: 2px solid black;
+}
+
+.nav2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav2 a:hover {
+  color: rgba(87, 196, 77, 1);
 }
 
 /* GRID */
@@ -104,20 +139,25 @@ div {
 /* CAROUSEL STYLING */
 .arrow {
   position: absolute;
-  top: 85rem; right: 5rem;
+  top: 80rem; right: 5rem;
 }
 
 .wrapper{
-  margin-right: 4.5rem;
+  margin-right: 3.5rem;
   margin-bottom: -16px;
   height: 700px;
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  border-right: 2px solid black;
 }
 
 .wrapper::-webkit-scrollbar{
   width: 0;
+}
+
+.item {
+  border-bottom: 2px solid black;
 }
 
 .item img{
@@ -161,7 +201,7 @@ div {
 .marquee__wrapper {
   white-space: nowrap;
   overflow: hidden;
-  margin-right: 4.5rem;
+  margin-right: 3.5rem;
   padding: .6rem;
   color:white;
   background-color: black;
@@ -196,14 +236,82 @@ div {
   padding-right: 40px;
 }
 
+/* SWATCHES */
+.swatches {
+  height: 40vh;
+  border: 2px solid black;
+  border-top: none;
+  margin-right: 3.5rem;
+}
+
+.swatches a {
+  text-decoration: none;
+  color: black;
+}
+
+.tab {
+  border: 2px solid black;
+  border-top: none;
+  margin: 0;
+  padding: .3rem 1rem;
+  display: inline-block;
+}
+
+.swatchContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 6rem 2rem;
+}
+
+.swatchContainer div{
+  height: 10rem;
+  width: 10rem;
+  border: 2px solid black;
+}
+
+.swatchContainer div:hover {
+  opacity: 50%;
+}
+
+.swatchContainer p {
+  background-color: white;
+  border-bottom: 2px solid black;
+  padding: .3rem .4rem;
+  margin: 0;
+}
+
+.denimSwatch {
+  background-image: url('./assets/denim.jpg');
+}
+
+.knitSwatch {
+  background-image: url('./assets/knit.png');
+}
+
+.sweatSwatch {
+  background-image: url('./assets/sweats.png');
+}
+
+.tapestrySwatch {
+  background-image: url('./assets/tapestry.png');
+}
+
+.terrySwatch {
+  background-image: url('./assets/terry.png');
+}
+
+.crochetSwatch {
+  background-image: url('./assets/crochet.png');
+}
+
 /* SPLIT SCREEN */
 .split{
   display: flex;
   /* flex-direction: column; */
   /* padding: 4rem 0rem; */
   max-width: 100vw;
-  margin-right: 4.5rem;
-  margin-bottom: 5rem;
+  margin-right: 3.5rem;
+  /* margin-bottom: 5rem; */
 }
 
 .splitContainer{
@@ -237,10 +345,15 @@ div {
   width: 100%;
   object-fit: cover;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   border: 2px solid black;
-  /* margin-left: 4rem; */
-  /* height: fit-content; */
+  border-top: none;
+}
+
+.splitContentContainer a {
+ border-top: 2px solid black;
+ padding: .5rem;
 }
 
 .splitContentContainer div {
@@ -249,10 +362,20 @@ div {
 }
 
 .splitContentContainer img {
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
   object-fit: cover;
-  height:95%;
+  height:100%;
   width: 100%;
+}
+
+.splitText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  text-transform: uppercase;
+  line-height: 2rem;
 }
 
 .right-img {
@@ -275,9 +398,8 @@ div {
 .newsletterSection{
   padding: 5rem;
   height: 300px;
-  margin-right: 4.5rem;
-  background-color: black;
-  color: white;
+  margin-right: 3.5rem;
+  border-right: 2px solid black;
 }
 
 .newsletterSection form {
@@ -293,15 +415,17 @@ div {
   width: 25rem;
   padding: .7rem;
   border: none;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
+  border: 2px solid black;
+}
+
+.newsletterSection button {
+  border-top: none;
 }
 
 /* INSTAGRAM FEED */
 .instagramSection{
   height: 14.6rem;
-  margin-right: 4.5rem;
+  margin-right: 3.5rem;
   overflow: hidden;
   /* background-color: aqua; */
 }
@@ -337,6 +461,73 @@ div {
   font-size: .6rem;
 }
 
+/* PRODUCT LIST */
+
+.productList {
+  padding-top: 5rem;
+}
+
+.productMenu {
+  display:flex;
+}
+
+.productMenu div {
+  width: 25%;
+  border: 1px solid black;
+}
+
+.productGrid {
+  min-height: 100vh;
+  /* padding-top: 5rem; */
+  /* margin-top: 2rem; */
+  margin-right: 4rem;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+
+.productMenu {
+  width: 25%;
+  /* height: 2rem; */
+  padding-top: 1rem;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+
+.productGrid::after {
+  content: "";
+  flex: auto;
+}
+
+/* PRODUCT CARD STYLES */
+.productCard {
+  border: 1px solid black;
+  width: 25%;
+  /* height: 45%; */
+  text-decoration: none;
+  color: black;
+}
+
+.productCard img {
+  object-fit: cover;
+  height: 33rem;
+}
+
+.productCard div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productCard p {
+  margin: 0 .5rem;
+}
+
+.productCard:hover {
+  opacity: 50%;
+}
+
 /* PRODUCT VIEW */
 .productView{
   display:flex;
@@ -369,7 +560,6 @@ div {
 } */
 
 .productInfo h1, .productInfo p{
-  text-transform: uppercase;
   margin: 0;
 }
 
@@ -411,16 +601,32 @@ div {
   font-weight: bold;
 }
 
+
 /* ABOUT STYLES */
 
-.about-container{
+.about-container {
   height: 100vh;
+  width: 80%;
+  padding-top: 5rem;
   /* background-image: url(./assets/patternpaper.png); */
+}
+
+.aboutText {
+  margin: 5rem 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutText img {
+  object-fit: cover;
+  height: 30rem;
+  border-right: 1px solid black;
 }
 
 /* PRESS STYLES */
 
-.press-container{
+.press-container {
   height: 100vh;
+  padding-top: 5rem;
 }
 

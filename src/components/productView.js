@@ -1,23 +1,27 @@
-import product1 from '../assets/ecomm dummy products/product1.1.webp';
-import product2 from '../assets/ecomm dummy products/product1.2.webp';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { products } from '../dummy data/dummyProducts';
 
 
-export default function productView() {
+export default function ProductView() {
+    const { id } = useParams();
+    const [product, setProduct] = useState(products[id])
   return (
     <div className='productView'>
         
         <div className='productLeft'>
-            <img src={product2}/>
+            <img src={product.productImages[1]}/>
         </div>
 
         <div className="productRight">
             <div className='product-info-img'>
-            <img src={product1}/>
+            <img src={product.productImages[0]}/>
             </div>
 
             <div className='productInfo'>
                 <div className='description'>
-                <h1>product 1</h1>
+                <h1>{product.productName}</h1>
                 <p>info about this product</p>
                 <p>more info about this product</p>
                 <p>put something here</p>

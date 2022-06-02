@@ -3,9 +3,9 @@ import productsModeled from '../assets/productsModeled';
 export default function carousel() {
   return (
     <div className="wrapper">
-      {/* <span class="material-symbols-outlined arrow">
+      <span class="material-symbols-outlined arrow">
       arrow_forward_ios
-      </span> */}
+      </span>
 
         {productsModeled.map(image => {
             if(typeof image === 'object'){
