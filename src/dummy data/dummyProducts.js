@@ -17,7 +17,7 @@ import product8b from '../assets/ecomm dummy products/product8.2.webp';
 import product9a from '../assets/ecomm dummy products/product9.1.webp';
 import product9b from '../assets/ecomm dummy products/product9.2.webp';
 
- export const products = [
+ export const dummyProducts = [
         {productImages: [product1a, product1b], 
         productName: 'satin dress', 
         productPrice: '$299'}, 

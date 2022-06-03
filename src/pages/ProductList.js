@@ -1,16 +1,21 @@
-import React from 'react';
-import { products } from '../dummy data/dummyProducts';
+import React, { useContext, useEffect } from 'react';
+import { ShopContext } from '../context/ShopContext';
 import ProductListCard from '../components/ProductListCard';
 
 export default function ProductList() {
-    console.log('products', products)
+  
+  const { fetchAllProducts, products } = useContext(ShopContext);
+
+  useEffect(() => {
+      fetchAllProducts()
+  }, [fetchAllProducts])
+  // console.log(products)
+
+
+  if(!products) return <div>loading</div>
+
   return (
     <div className='productList'>
-      {/* <div className='productMenu'>
-        <div><p>tops</p></div>
-        <div><p>bottoms</p></div>
-        <div><p>dresses</p></div>
-      </div> */}
      
         <div className='productGrid'>
           <a className='productMenu' href='/shop'>reworks</a>
@@ -18,8 +23,8 @@ export default function ProductList() {
           <a className='productMenu' href='/shop'>unique</a>
           <a className='productMenu' href=''></a>
         {
-            products.map((card, idx) => {
-                return <ProductListCard source={card.productImages[0]} name={card.productName} price={card.productPrice} idx={idx}/>
+            products.map((product) => {
+                return <ProductListCard product={product} key={product.id}/>
             })
         }
         </div>

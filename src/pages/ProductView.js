@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
-import { products } from '../dummy data/dummyProducts';
+import { ShopContext } from '../context/ShopContext';
 
 
 export default function ProductView() {
+    const { fetchProductById, addItemToCheckout, product } = useContext(ShopContext);
     const { id } = useParams();
-    const [product, setProduct] = useState(products[id])
+    const strId = 'gid://shopify/Product/' + id;
+
+    useEffect(() => {
+        fetchProductById(strId)
+    }, [fetchProductById, strId])
+
   return (
     <div className='productView'>
-        
         <div className='productLeft'>
-            <img src={product.productImages[1]}/>
+            <img src={product.images[1].src}/>
         </div>
 
         <div className="productRight">
             <div className='product-info-img'>
-            <img src={product.productImages[0]}/>
+            <img src={product.images[0].src}/>
             </div>
 
             <div className='productInfo'>
                 <div className='description'>
-                <h1>{product.productName}</h1>
-                <p>info about this product</p>
+                <h1>{product.title}</h1>
+                <p>{product.description}</p>
                 <p>more info about this product</p>
                 <p>put something here</p>
                 </div>

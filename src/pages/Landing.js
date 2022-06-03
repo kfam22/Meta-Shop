@@ -1,3 +1,4 @@
+
 import Grid from '../components/Grid';
 import Carousel from '../components/Carousel';
 import Marquee from '../components/Marquee';
@@ -9,6 +10,7 @@ import InstagramFeedBar from '../components/InstagramFeedBar';
 
 
 export default function Landing() {
+  
   return (
     <div>
       <div className='landing'>

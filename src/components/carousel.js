@@ -3,7 +3,7 @@ import productsModeled from '../assets/productsModeled';
 export default function Carousel() {
   return (
     <div className="wrapper">
-      <span class="material-symbols-outlined arrow">
+      <span className="material-symbols-outlined arrow">
       arrow_forward_ios
       </span>
 
@@ -22,7 +22,6 @@ export default function Carousel() {
                 )
             }
             else {
-                console.log('image div created')
                 return(
               <div className='item' key={image}>
                 <img src={image} alt=''/>
