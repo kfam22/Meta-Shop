@@ -8,17 +8,19 @@ export default function ProductList() {
 
   useEffect(() => {
       fetchAllProducts()
+      return () => {
+
+      }
   }, [fetchAllProducts])
-  // console.log(products)
 
-
-  if(!products) return <div>loading</div>
+  if(products[0] === undefined) return <div className='productList'></div>
 
   return (
     <div className='productList'>
      
         <div className='productGrid'>
-          <a className='productMenu' href='/shop'>reworks</a>
+          <div className='productListDescription'>current collection name</div>
+          <a className='productMenu reworks' href='/shop'>reworks</a>
           <a className='productMenu' href='/shop'>vintage</a>
           <a className='productMenu' href='/shop'>unique</a>
           <a className='productMenu' href=''></a>

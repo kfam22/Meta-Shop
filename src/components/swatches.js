@@ -12,25 +12,35 @@ export default function Swatches() {
             </div>
             </Link>
 
+            <Link to='/shop'>
             <div className='knitSwatch'>
                 <p>knit</p>
             </div>
+            </Link>
 
+            <Link to='/shop'>
             <div className='sweatSwatch'>
                 <p>sweats</p>
             </div>
+            </Link>
 
+            <Link to='/shop'>
             <div className='tapestrySwatch'>
                 <p>tapestry</p>
             </div>
+            </Link>
 
+            <Link to='/shop'>
             <div className='terrySwatch'>
                 <p>terry</p>
             </div>
+            </Link>
 
+            <Link to='/shop'>
             <div className='crochetSwatch'>
                 <p>crochet</p>
             </div>
+            </Link>
         </div>
 
     </div>

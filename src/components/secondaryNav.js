@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShopContext } from '../context/ShopContext';
 import { Link } from 'react-router-dom';
-import cart from '../assets/cart.png';
+import cart from '../assets/bag-black-01.svg';
 
 
 export default function SecondaryNav({onNavClick}) {
+
+  const { openCart } = useContext(ShopContext);
+
   return (
 
     <div>
@@ -17,7 +21,7 @@ export default function SecondaryNav({onNavClick}) {
     </div>
 
     <div className='verticalNav'>
-            <div className='cart'>
+            <div className='cartIcon' onClick={() => openCart()}>
                 <img src={cart}/>
             </div>
 

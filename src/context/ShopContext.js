@@ -28,12 +28,12 @@ class ShopProvider extends Component {
     }
 
     addItemToCheckout = async (variantId, quantity) => {
-        const lineItemToAdd = [{
+        const lineItemsToAdd = [{
             variantId,
             quantity: parseInt(quantity, 10)
         }];
 
-        const checkout = await client.checkout.addLineItems(this.state.checkout.id, lineItemToAdd);
+        const checkout = await client.checkout.addLineItems(this.state.checkout.id, lineItemsToAdd);
         this.setState({checkout: checkout})
     }
 
@@ -45,7 +45,7 @@ class ShopProvider extends Component {
     fetchProductById = async (id) => {
         const product = await client.product.fetch(id);
         this.setState({product: product});
-        return product;
+        // return product;
     }
 
     closeCart = () => { this.setState({ isCartOpen: false }) }
@@ -62,7 +62,7 @@ class ShopProvider extends Component {
           fetchProductById: this.fetchProductById,
           closeCart: this.closeCart,
           openCart: this.openCart,
-          addItemToCart: this.addItemToCheckout
+          addItemToCheckout: this.addItemToCheckout
       }}>
         {this.props.children}
       </ShopContext.Provider>

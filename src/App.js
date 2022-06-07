@@ -1,6 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
+import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
+import { Client as Styletron } from "styletron-engine-atomic";
 import ShopProvider from './context/ShopContext';
 
 
@@ -12,6 +14,10 @@ import ProductList from './pages/ProductList';
 import ProductView from './pages/ProductView';
 import About from './pages/About';
 import Press from './pages/Press';
+import Cart from './components/Cart';
+
+const debug = process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+const engine = new Styletron();
 
 function App() {
 
@@ -27,21 +33,24 @@ function App() {
 
   return (
     <ShopProvider>
-        <Link to='/' className='logo'>Almost On Time</Link>
+      <StyletronProvider value={engine} debug={debug} debugAfterHydration>
+          <Link to='/' className='logo'>Almost On Time</Link>
 
-        {
-          !toggleNav ? <Nav onNavClick={onNavClick}/> : <SecondaryNav onNavClick={onNavClick}/> 
-        }
+          {
+            !toggleNav ? <Nav onNavClick={onNavClick}/> : <SecondaryNav onNavClick={onNavClick}/> 
+          }
+          <Cart />
 
-        <Routes>
-          <Route exact path='/' element={<Landing/>}/>
-          <Route path='/shop/:id' element={<ProductView/>}/>
-          <Route path='/shop' element={<ProductList/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/press' element={<Press/>}/>
-        </Routes>
+          <Routes>
+            <Route exact path='/' element={<Landing/>}/>
+            <Route path='/shop/:id' element={<ProductView/>}/>
+            <Route path='/shop' element={<ProductList/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/press' element={<Press/>}/>
+          </Routes>
 
-        <Footer/>
+          <Footer/>
+        </StyletronProvider>
     </ShopProvider>
   );
 }

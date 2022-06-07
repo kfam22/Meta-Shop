@@ -1,18 +1,34 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
+import { dummyProducts } from '../dummy data/dummyProducts'; 
 
 
 export default function ProductView() {
-    const { fetchProductById, addItemToCheckout, product } = useContext(ShopContext);
-    const { id } = useParams();
+    const { fetchProductById, addItemToCheckout, product, openCart } = useContext(ShopContext);
+    let { id } = useParams();
     const strId = 'gid://shopify/Product/' + id;
+    const [variantId, setVariantId] = useState('')
 
     useEffect(() => {
         fetchProductById(strId)
-    }, [fetchProductById, strId])
+        return () => {
 
-  return (
+        };
+    }, [fetchProductById, strId]);
+
+    function setSizeVariant(variant) {
+        setVariantId(variant.id);
+    }
+
+    function handleAddClick(variantId, quantity) {
+        addItemToCheckout(variantId, quantity);
+        openCart();
+    }
+
+    if(product.images === undefined || product.variants === undefined) return <div className='productView'></div>
+
+    return (
     <div className='productView'>
         <div className='productLeft'>
             <img src={product.images[1].src}/>
@@ -27,20 +43,22 @@ export default function ProductView() {
                 <div className='description'>
                 <h1>{product.title}</h1>
                 <p>{product.description}</p>
-                <p>more info about this product</p>
-                <p>put something here</p>
+                {/* <p>more info about this product</p>
+                <p>put something here</p> */}
                 </div>
 
                 <div className='sizing'>
                     <p className='select'>select size</p>
                     <div className='sizes'>
-                        <div><p>xs</p></div>
-                        <div><p>s</p></div>
-                        <div><p>m</p></div>
-                        <div><p>l</p></div>
-                        <div><p>xl</p></div>
+                        {
+                            product.variants.map((variant, idx) => {
+                                return <div
+                                className={variantId === variant.id ? 'selectedSize' : ''}
+                                onClick={() => setSizeVariant(variant)} key={idx}><p>{variant.title}</p></div>
+                            })
+                        }
                     </div>
-                    <p className='add'>add to bag</p>
+                    <button className='add' onClick={() => handleAddClick(variantId, 1)}>add to bag</button>
                 </div>
             </div>
         </div>
