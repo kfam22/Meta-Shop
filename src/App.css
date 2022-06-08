@@ -610,6 +610,7 @@ h1 {
 
 .productLeft{
   /* height: 100vh; */
+  width: 50%;
   overflow: hidden;
 }
 
@@ -622,9 +623,15 @@ h1 {
   height: 40rem;
 }
 
+.product-info-img {
+  align-self: center;
+}
+
 .productRight{
+  width: 50%;
   display:flex;
   flex-direction: column;
+  justify-content: center;
   padding: 0 5rem;
   border-left: 1px solid black;
 }
