@@ -20,7 +20,7 @@ export default function SecondaryNav({onNavClick}) {
         </div> 
     </div>
 
-    <div className='verticalNav'>
+    <div className='verticalNav noBorder'>
             <div className='cartIcon' onClick={() => openCart()}>
                 <img src={cart}/>
             </div>

@@ -34,8 +34,9 @@ function App() {
   return (
     <ShopProvider>
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-          <Link to='/' className='logo'>Almost On Time</Link>
-
+          <div className='logo-container'>
+            <Link to='/' className='logo'>Almost On Time</Link>
+          </div>
           {
             !toggleNav ? <Nav onNavClick={onNavClick}/> : <SecondaryNav onNavClick={onNavClick}/> 
           }

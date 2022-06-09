@@ -21,7 +21,7 @@ export default function Landing() {
       <SplitScreenRight/>
       <SplitScreen/>
       <Swatches/>
-      <Newsletter/>
+      {/* <Newsletter/> */}
       {/* <InstagramFeedBar/> */}
     </div>
   )
