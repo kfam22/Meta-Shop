@@ -99,7 +99,7 @@ h1 {
   border-left: none;
 }
 
-.nav a, .nav p{
+.nav a, .nav p {
   text-align:center;
   transform: rotate(90deg);
   padding: .2rem .4rem;
@@ -120,7 +120,42 @@ h1 {
 }
 
 .nav{
-  margin-bottom: 15rem;
+  margin-bottom: 22rem;
+}
+
+.activeSearch {
+  position: fixed;
+  top: 95%;
+  right: .9%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  padding: .3rem;
+  padding-right: none;
+  border: 1px solid black;
+  background-color: white;
+  width: 20rem;
+}
+
+.activeSearch input {
+  border: none;
+  width: 16vw;
+  height: 1.2rem;
+  outline: none;
+}
+
+.search {
+  padding: .3rem;
+  padding-right: none;
+  margin-bottom: 1rem;
+  position: fixed;
+  top: 95%;
+  right: .9%;
+}
+
+.search i:hover, .activeSearch i:hover {
+  cursor: pointer;
 }
 
 .cartIcon img{
@@ -552,6 +587,7 @@ footer input, footer button {
 
 footer input {
   width: 13rem;
+  outline: none;
 }
 
 .bottom {

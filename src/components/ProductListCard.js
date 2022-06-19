@@ -5,6 +5,8 @@ export default function ProductListCard(props) {
     const { product, idx } = props;
     const slug = product.title.toLowerCase().split(' ').join('-')
     const id = product.id.replace(/\D/g, "");
+
+    console.log('product', product);
   return (
     <Link to={`/shop/${id}`} className='productCard'>
         <img src={product.images[0].src}/>

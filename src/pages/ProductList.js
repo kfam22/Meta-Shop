@@ -19,7 +19,7 @@ export default function ProductList() {
     <div className='productList'>
      
         <div className='productGrid'>
-          <div className='productListDescription'>current collection name</div>
+          {/* <div className='productListDescription'>current collection name</div> */}
           <a className='productMenu reworks' href='/shop'>reworks</a>
           <a className='productMenu' href='/shop'>vintage</a>
           <a className='productMenu' href='/shop'>unique</a>
