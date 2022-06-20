@@ -59,6 +59,10 @@ class ShopProvider extends Component {
         console.log('setting shop context state', this.state);
     }
 
+    clearSearch = async () => {
+        await this.setState({searchInput: ''});
+    }
+
   render() {
     return (
       <ShopContext.Provider value={{
@@ -68,6 +72,7 @@ class ShopProvider extends Component {
           closeCart: this.closeCart,
           openCart: this.openCart,
           setSearch: this.setSearch,
+          clearSearch: this.clearSearch,
           addItemToCheckout: this.addItemToCheckout
       }}>
         {this.props.children}
