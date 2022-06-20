@@ -858,6 +858,6 @@ footer input {
 /* ATOMIZE OVERRIDE */
 
 .__debug-0.al, .__debug-4.al {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.304);
 }
 

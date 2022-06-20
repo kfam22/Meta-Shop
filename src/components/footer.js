@@ -19,7 +19,7 @@ export default function Footer() {
 
         <div className="footer-section">
           <p>connect</p>
-          <a href='/'>@almost.on.time</a>
+          <a href='https://www.instagram.com/almost.on.time/' target='blank'>@almost.on.time</a>
           <a href='/'>tiktok</a>
           <a href='/'>youtube</a>
         </div>
