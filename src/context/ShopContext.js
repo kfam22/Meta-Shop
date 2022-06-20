@@ -60,7 +60,7 @@ class ShopProvider extends Component {
           fetchAllProducts: this.fetchAllProducts,
           fetchProductById: this.fetchProductById,
           closeCart: this.closeCart,
-          clearSearch: this.clearSearch,
+          openCart: this.openCart,
           addItemToCheckout: this.addItemToCheckout
       }}>
         {this.props.children}
