@@ -1,15 +1,29 @@
 import React, { useContext, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import cartIcon from '../assets/bag-black-01.svg';
 
 export default function Nav({onNavClick}) {
 
-  // const element = <FontAwesomeIcon icon="fa-thin fa-magnifying-glass" />
-  const { openCart } = useContext(ShopContext);
+  const { openCart, setSearch } = useContext(ShopContext);
   const [toggleSearch, setToggleSearch] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
+  const navigate = useNavigate();
+
+  const onSearchChange = e => {
+    setSearchInput(e.target.value)
+  };
 
   function onSearchClick() {
+    setToggleSearch(!toggleSearch);
+  }
+
+  function onSearchSubmit(e) {
+    e.preventDefault();
+    setSearch(searchInput);
+    navigate("/shop");
+    console.log('search value', searchInput);
+    setSearchInput('');
     setToggleSearch(!toggleSearch);
   }
 
@@ -29,15 +43,23 @@ export default function Nav({onNavClick}) {
           toggleSearch ? 
           
           <div className='activeSearch'>
-            <form>
-              <input type='text'/>
+            <form onSubmit={onSearchSubmit}>
+              <input 
+              name='search'
+              type='text'
+              value={searchInput}
+              onChange={onSearchChange}
+              />
             </form>
             
-            <i class="material-icons" onClick={onSearchClick}>search</i>
+            <div className='closeSearch'>
+              <i className="material-icons close" onClick={onSearchClick}>close</i>
+              <i className="material-icons" onClick={onSearchSubmit}>search</i>
+            </div>
           </div> :
 
           <div className='search'>
-            <i class="material-icons" onClick={onSearchClick}>search</i>
+            <i className="material-icons" onClick={onSearchClick}>search</i>
           </div>
         }
         

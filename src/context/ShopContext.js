@@ -15,7 +15,7 @@ class ShopProvider extends Component {
         product: {},
         checkout: {},
         isCartOpen: false,
-        test: 'test'
+        searchInput: ''
     };
 
     componentDidMount() {
@@ -54,7 +54,10 @@ class ShopProvider extends Component {
 
     openCart = () => { this.setState({ isCartOpen: true }) }
 
-
+    setSearch = async (searchValue) => {
+        await this.setState({searchInput: searchValue});
+        console.log('setting shop context state', this.state);
+    }
 
   render() {
     return (
@@ -64,6 +67,7 @@ class ShopProvider extends Component {
           fetchProductById: this.fetchProductById,
           closeCart: this.closeCart,
           openCart: this.openCart,
+          setSearch: this.setSearch,
           addItemToCheckout: this.addItemToCheckout
       }}>
         {this.props.children}

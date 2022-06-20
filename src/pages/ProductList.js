@@ -3,8 +3,8 @@ import { ShopContext } from '../context/ShopContext';
 import ProductListCard from '../components/ProductListCard';
 
 export default function ProductList() {
-  
-  const { fetchAllProducts, products } = useContext(ShopContext);
+
+  const { fetchAllProducts, products, searchInput } = useContext(ShopContext);
 
   useEffect(() => {
       fetchAllProducts()
@@ -12,6 +12,9 @@ export default function ProductList() {
 
       }
   }, [fetchAllProducts])
+
+  const filteredProducts = products.filter(product => { return product.title.includes(searchInput) === true});
+  console.log('search input', searchInput,'filtered products', filteredProducts);
 
   if(products[0] === undefined) return <div className='productList'></div>
 
@@ -25,7 +28,7 @@ export default function ProductList() {
           <a className='productMenu' href='/shop'>unique</a>
           <a className='productMenu' href=''></a>
         {
-            products.map((product) => {
+            filteredProducts.map((product) => {
                 return <ProductListCard product={product} key={product.id}/>
             })
         }
