@@ -145,8 +145,7 @@ h1 {
 }
 
 .search {
-  padding: .4rem;
-  padding-right: none;
+  padding: .4rem 0 .4rem .4rem .4rem;
   margin-bottom: 1rem;
   position: fixed;
   top: 95%;
