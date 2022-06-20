@@ -16,6 +16,7 @@ import ProductView from './pages/ProductView';
 import About from './pages/About';
 import Press from './pages/Press';
 import Cart from './components/Cart';
+import SearchResults from './pages/SearchResults'
 
 const debug = process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
 const engine = new Styletron();
@@ -48,6 +49,7 @@ function App() {
             <Route exact path='/' element={<Landing/>}/>
             <Route path='/shop/:id' element={<ProductView/>}/>
             <Route path='/shop' element={<ProductList/>}/>
+            <Route path='/search/:query' element={<SearchResults/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/press' element={<Press/>}/>
           </Routes>

@@ -5,7 +5,7 @@ import cartIcon from '../assets/bag-black-01.svg';
 
 export default function Nav({onNavClick}) {
 
-  const { openCart, setSearch, clearSearch } = useContext(ShopContext);
+  const { openCart } = useContext(ShopContext);
   const [toggleSearch, setToggleSearch] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const navigate = useNavigate();
@@ -19,15 +19,14 @@ export default function Nav({onNavClick}) {
   }
 
   function formatInput(input) {
-    let format = input.split(' ').map(word => word[0].toUpperCase() + word.slice(1));
-    return format.join(' ');
+    let format = input.split(' ');
+    return format.join('-');
   }
 
   function onSearchSubmit(e) {
     e.preventDefault();
     const search = formatInput(searchInput);
-    setSearch(search);
-    navigate("/shop");
+    navigate(`/search/${search}`);
     setSearchInput('');
     setToggleSearch(!toggleSearch);
   }
@@ -40,8 +39,8 @@ export default function Nav({onNavClick}) {
 
         <div className='nav'>
         <p onClick={onNavClick}>shop</p>
-        <Link onClick={clearSearch} to='/about'>about</Link>
-        <Link onClick={clearSearch} to='/press'>press</Link>
+        <Link to='/about'>about</Link>
+        <Link to='/press'>press</Link>
         </div>
 
         {
