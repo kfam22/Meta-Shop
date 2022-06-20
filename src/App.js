@@ -8,6 +8,7 @@ import ShopProvider from './context/ShopContext';
 
 import Landing from './pages/Landing';
 import Nav from './components/Nav';
+import Logo from './components/Logo';
 import SecondaryNav from './components/SecondaryNav';
 import Footer from './components/Footer';
 import ProductList from './pages/ProductList';
@@ -34,9 +35,10 @@ function App() {
   return (
     <ShopProvider>
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-          <div className='logo-container'>
+          <Logo/>
+          {/* <div className='logo-container'>
             <Link to='/' className='logo'>Almost On Time</Link>
-          </div>
+          </div> */}
           {
             !toggleNav ? <Nav onNavClick={onNavClick}/> : <SecondaryNav onNavClick={onNavClick}/> 
           }
