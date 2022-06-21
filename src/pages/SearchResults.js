@@ -15,13 +15,21 @@ export default function SearchResults() {
       }
   }, [fetchAllProducts]);
 
-   function formatInput(input) {
+   function formatTitleInput(input) {
     let format = input.split('-').map(word => word[0].toUpperCase() + word.slice(1));
     return format.join(' ');
   }
 
-  const filteredProducts = products.filter(product => { return product.title.includes(formatInput(query)) === true});
-  console.log('search input', formatInput(query),'filtered products', filteredProducts);
+  function formatDescriptionInput(input) {
+    let format = input.split('-');
+    return format.join(' ').toLowerCase();
+  };
+
+  formatDescriptionInput(query);
+
+
+  const filteredProducts = products.filter(product => { return product.title.includes(formatTitleInput(query)) === true  || product.description.includes(formatDescriptionInput(query)) === true});
+
 
   if(products[0] === undefined) return <div className='productList'></div>
 

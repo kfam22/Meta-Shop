@@ -53,6 +53,7 @@ export default function Nav({onNavClick}) {
               type='text'
               value={searchInput}
               onChange={onSearchChange}
+              autoFocus
               />
             </form>
             

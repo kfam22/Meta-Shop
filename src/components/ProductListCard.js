@@ -12,7 +12,7 @@ export default function ProductListCard(props) {
         <img src={product.images[0].src}/>
         <div className='productCardDetails'>
         <p>{product.title}</p>
-        <p>${product.variants[0].price}</p>
+        <p>${product.variants[0].price.slice(0, -3)}</p>
         </div>
     </Link>
   )

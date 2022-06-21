@@ -42,6 +42,7 @@ export default function ProductView() {
             <div className='productInfo'>
                 <div className='description'>
                 <h1>{product.title}</h1>
+                {/* <p>${product.variants[0].price}</p> */}
                 <p>{product.description}</p>
                 {/* <p>more info about this product</p>
                 <p>put something here</p> */}
